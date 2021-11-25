@@ -99,12 +99,13 @@ function renderMat(mat, selector) {
             cell.minesAroundCount = setMinesNegsCount(i, j);
             cell.value = setMinesNegsCount(i, j);
             var className = ''+i + j;
+            var cellContain;
             if (cell.isShown !== true){
-                cell.value = COVER;
+                cellContain = COVER;
             } 
             //console.log('value',cell.value);
             
-            strHTML += `<td class="cell${className}" onclick="cellClicked()">${cell.value}</td>`
+            strHTML += `<td class="cell${className}" onclick="cellClicked(this,${i},${j})">${cellContain}</td>`
             // '<td class="' + className + '"> ' + cell + ' </td>'
         }
         strHTML += '</tr>'
@@ -142,6 +143,21 @@ function countMineNegs(rowIdx, colIdx) {
     return minesNegsCounter;
 }
 
-function cellClicked(){
+function cellClicked(elCell,i,j){
+    revealCell(elCell,i,j)
     
+}
+function revealCell(elCell,idxI,idxJ){
+    console.log('idxi',idxI);
+    var clickedCell = gBoard[idxI][idxJ];
+    
+    if(clickedCell.isShown===false){
+        gGame.shownCount++
+        clickedCell.isShown= true;
+        
+        elCell.innerHTML =  clickedCell.value;
+        
+        console.log(elCell.innerHTML);
+
+    }
 }
