@@ -13,9 +13,6 @@ table{
     height: 300px;
 }
 td{
-    min-width: 6em;
-    min-height: 6em;
-}
-.hidden{
-    background-color:lightslategray ;
+    width: 6em;
+    height: 6em;
 }
