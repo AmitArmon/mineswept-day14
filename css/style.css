@@ -4,14 +4,20 @@ body{
     line-height: 1.8em;
     font-size:inherit;
     text-align:center;
+    position:center;
+    padding-top: 1em;
 }
 table,td {
     border: 1px solid black;
     table-layout: fixed;
+    
   }
 table{
     width:300px;
     height: 300px;
+    margin-left: 40%;
+    margin-top: 3em;
+    margin-bottom: 3em;;
 }
 td{
     width: 6em;
